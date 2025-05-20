@@ -7,14 +7,14 @@ set -e
 IMAGE_TAG=$1
 NAMESPACE="devops-app-production"
 APP_NAME="devops-app"
-ECR_REPOSITORY="seu-account-id.dkr.ecr.us-east-1.amazonaws.com/${APP_NAME}"
+ECR_REPOSITORY="505361048053.dkr.ecr.us-east-2.amazonaws.com/${APP_NAME}"
 IMAGE="${ECR_REPOSITORY}:${IMAGE_TAG}"
 
 echo "Iniciando deploy em produção usando estratégia Blue-Green..."
 echo "Imagem: ${IMAGE}"
 
 # Configurar kubectl para o cluster de produção
-aws eks update-kubeconfig --name devops-production-cluster --region us-east-1
+aws eks update-kubeconfig --name devops-production-cluster --region us-east-2
 
 # Verificar se o namespace existe, caso contrário criar
 kubectl get namespace ${NAMESPACE} > /dev/null 2>&1 || kubectl create namespace ${NAMESPACE}

@@ -6,7 +6,7 @@ set -e
 # Definir variáveis
 REGION="us-east-1"
 WAF_NAME="devops-app-waf"
-ALB_ARN="arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/devops-app-alb/abcdef123456"
+ALB_ARN="arn:aws:elasticloadbalancing:us-east-2:123456789012:loadbalancer/app/devops-app-alb/abcdef123456"
 
 # Criar Web ACL
 WEB_ACL_ID=$(aws wafv2 create-web-acl \

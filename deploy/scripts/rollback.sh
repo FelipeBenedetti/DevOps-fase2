@@ -12,9 +12,9 @@ echo "Iniciando rollback em ${NAMESPACE} usando estratégia ${DEPLOYMENT_TYPE}..
 
 # Configurar kubectl para o cluster correto
 if [[ "${NAMESPACE}" == *"staging"* ]]; then
-  aws eks update-kubeconfig --name devops-staging-cluster --region us-east-1
+  aws eks update-kubeconfig --name devops-staging-cluster --region us-east-2
 else
-  aws eks update-kubeconfig --name devops-production-cluster --region us-east-1
+  aws eks update-kubeconfig --name devops-production-cluster --region us-east-2
 fi
 
 if [ "${DEPLOYMENT_TYPE}" == "blue-green" ]; then

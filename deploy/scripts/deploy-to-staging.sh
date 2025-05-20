@@ -8,14 +8,14 @@ IMAGE_TAG=$1
 NAMESPACE="devops-app-staging"
 APP_NAME="devops-app"
 DEPLOYMENT_NAME="${APP_NAME}"
-ECR_REPOSITORY="seu-account-id.dkr.ecr.us-east-1.amazonaws.com/${APP_NAME}"
+ECR_REPOSITORY="seu-account-id.dkr.ecr.us-east-2.amazonaws.com/${APP_NAME}"
 IMAGE="${ECR_REPOSITORY}:${IMAGE_TAG}"
 
 echo "Iniciando deploy em staging..."
 echo "Imagem: ${IMAGE}"
 
 # Configurar kubectl para o cluster de staging
-aws eks update-kubeconfig --name devops-staging-cluster --region us-east-1
+aws eks update-kubeconfig --name devops-staging-cluster --region us-east-2
 
 # Verificar se o namespace existe, caso contrário criar
 kubectl get namespace ${NAMESPACE} > /dev/null 2>&1 || kubectl create namespace ${NAMESPACE}
