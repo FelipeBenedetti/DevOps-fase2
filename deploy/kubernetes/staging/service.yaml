@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: devops-app-service
+  namespace: devops-app-staging
+spec:
+  selector:
+    app: devops-app
+  ports:
+  - port: 80
+    targetPort: 5000
+  type: ClusterIP
+

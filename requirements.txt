@@ -1,0 +1,6 @@
+﻿flask
+gunicorn
+prometheus-client
+pytest==6.2.5
+pytest-cov==2.12.1
+flake8==3.9.2

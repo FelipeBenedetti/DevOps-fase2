@@ -1,0 +1,6 @@
+.terraform/
+terraform/.terraform/
+terraform/.terraform/aws/
+terrafirn/.terraform/
+*.exe
+*.zip
