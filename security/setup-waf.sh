@@ -4,7 +4,7 @@
 set -e
 
 # Definir variáveis
-REGION="us-east-1"
+REGION="us-east-2"
 WAF_NAME="devops-app-waf"
 ALB_ARN="arn:aws:elasticloadbalancing:us-east-2:123456789012:loadbalancer/app/devops-app-alb/abcdef123456"
 

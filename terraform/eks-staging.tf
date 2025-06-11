@@ -1,9 +1,4 @@
-﻿provider "aws" {
-  region = "us-east-2"
-}
-
-
-module "eks" {
+﻿module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "20.8.4"  
 
@@ -16,6 +11,11 @@ module "eks" {
     "subnet-0e4007db60a38d781",  # us-east-2b
     "subnet-0690f267a739551bc"   # us-east-2a
   ]
+
+  cluster_endpoint_public_access  = true
+  cluster_endpoint_private_access = true
+
+  cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"] 
 
   eks_managed_node_groups = {
     eks_nodes = {
